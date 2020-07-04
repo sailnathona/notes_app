@@ -1,0 +1,9 @@
+<h3>Hello, {{ username }}</h3>
+
+<form name="loginform" action="/notes/index/" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit"/>
+    {% for field, errors in form.errors.items %}
+        {{ errors }}
+   {% endfor %}
+</form>
